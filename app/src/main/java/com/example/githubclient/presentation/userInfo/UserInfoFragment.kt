@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class UserInfoFragment: BaseViewFragment<UserInfoViewModel>(R.layout.fragment_user_info) {
+class UserInfoFragment : BaseViewFragment<UserInfoViewModel>(R.layout.fragment_user_info) {
     companion object Fabric {
         fun create() = UserInfoFragment()
     }
@@ -57,21 +57,19 @@ class UserInfoFragment: BaseViewFragment<UserInfoViewModel>(R.layout.fragment_us
         lifecycleScope.launchWhenResumed {
             launch {
                 selfNavigationViewModel.currentScreen.collect {
-                    childFragmentManager.commit {
-                        when(it) {
-                            UserInfoScreens.REPOSITORY_LIST -> {
-                                binding.fcvUserInfoContainer.findNavController().navigate(
-                                    RepositoryListFragmentDirections.actionRepositoryListFragmentToUserProfileFragment()
-                                )
-                                binding.bnvMainNavigation.selectedItemId = R.id.actionReposList
-                            }
+                    when (it) {
+                        UserInfoScreens.REPOSITORY_LIST -> {
+                            binding.fcvUserInfoContainer.findNavController().navigate(
+                                UserProfileFragmentDirections.actionUserProfileFragmentToRepositoryListFragment()
+                            )
+                            binding.bnvMainNavigation.selectedItemId = R.id.actionReposList
+                        }
 
-                            UserInfoScreens.USER_PROFILE -> {
-                                binding.fcvUserInfoContainer.findNavController().navigate(
-                                    UserProfileFragmentDirections.actionUserProfileFragmentToRepositoryListFragment()
-                                )
-                                binding.bnvMainNavigation.selectedItemId = R.id.actionProfile
-                            }
+                        UserInfoScreens.USER_PROFILE -> {
+                            binding.fcvUserInfoContainer.findNavController().navigate(
+                                RepositoryListFragmentDirections.actionRepositoryListFragmentToUserProfileFragment()
+                            )
+                            binding.bnvMainNavigation.selectedItemId = R.id.actionProfile
                         }
                     }
                 }
