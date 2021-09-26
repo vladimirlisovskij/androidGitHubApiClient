@@ -9,17 +9,19 @@
         android:name="com.example.githubclient.presentation.userProfile.UserProfileFragment"
         android:label="UserProfileFragment"
         tools:layout="@layout/fragment_profile">
-        <action
-            android:id="@+id/action_userProfileFragment_to_repositoryListFragment"
-            app:destination="@id/repositoryListFragment" />
     </fragment>
     <fragment
         android:id="@+id/repositoryListFragment"
         android:name="com.example.githubclient.presentation.repositoryList.RepositoryListFragment"
         android:label="RepositoryListFragment"
         tools:layout="@layout/fragment_repository_list">
-        <action
-            android:id="@+id/action_repositoryListFragment_to_userProfileFragment"
-            app:destination="@id/userProfileFragment" />
     </fragment>
+
+    <action
+        android:id="@+id/action_repositoryListFragment_to_userProfileFragment"
+        app:destination="@id/userProfileFragment" />
+
+    <action
+        android:id="@+id/action_userProfileFragment_to_repositoryListFragment"
+        app:destination="@id/repositoryListFragment" />
 </navigation>
