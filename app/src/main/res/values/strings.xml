@@ -2,4 +2,8 @@
     <string name="app_name">GithubClient</string>
     <string name="followers">Followers %1$d</string>
     <string name="following">Following %1$d</string>
+    <string name="publicRepos">Public repos %1$d</string>
+    <string name="pushed">Pushed as %1$s</string>
+    <string name="updated">Updated as %1$s</string>
+    <string name="created">Created as %1$s</string>
 </resources>

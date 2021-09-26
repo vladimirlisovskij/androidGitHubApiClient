@@ -32,7 +32,11 @@ val viewModelModule = module {
     }
 
     viewModel {
-        RepositoryListViewModel()
+        RepositoryListViewModel(
+            getUserIdUseCase = get(),
+            getUserRepositories = get(),
+            clearUserIdUseCase = get()
+        )
     }
 
     viewModel {

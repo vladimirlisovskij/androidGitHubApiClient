@@ -1,5 +1,6 @@
 package com.example.githubclient.domain.useCase.api
 
+import com.example.githubclient.domain.exceptions.UserNotFoundException
 import com.example.githubclient.domain.repository.ApiRepository
 
 class GetUserInfoUseCase(
@@ -7,3 +8,4 @@ class GetUserInfoUseCase(
 ) {
     suspend operator fun invoke(userId: String) = apiRepository.getUserInfo(userId)
 }
+

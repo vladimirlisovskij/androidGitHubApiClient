@@ -16,9 +16,10 @@ class UserInfoNavigationViewModel : BaseViewModel() {
         }
     }
 
-    fun navigateToRepositoryInfo() {
+    fun navigateToProfileInfo() {
         runBlocking {
             _currentScreen.emit(UserInfoScreens.USER_PROFILE)
         }
     }
 }
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DefaultText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DefaultText.16">
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="DefaultText.24">
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="DefaultText.24.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>
